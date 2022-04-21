@@ -1,0 +1,14 @@
+<div class="container-fluid p-5" *ngIf="!showDetails">
+  <div class="row">
+    <div class="col-sm-3 card-father" *ngFor="let product of productList">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{ product?.name }}</h5>
+          <p class="card-text">{{ product?.description }}</p>
+          <a [routerLink]="['/product/',product.id]" class="btn btn-success" >Product Details</a>
+          <a class="btn btn-warning m-1" (click)="addToCart(product)">Add to Cart</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
